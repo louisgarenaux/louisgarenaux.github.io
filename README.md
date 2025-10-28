@@ -9,6 +9,10 @@
 1. L. Garénaux and B. de Rijk — Global existence and decay of small solutions in a viscous half Klein–Gordon equation (2022). [arXiv](https://arxiv.org/abs/2509.13188)
 
 ### Publications
+
+1. L. Garénaux and H. J. Hupkes: 2026. [DOI](https://doi.org/10.3934/dcds.2025134) - [arXiv](https://arxiv.org/abs/2412.16580)<br>
+   Existence of monostable fronts for a KPP infinite-difference numerical scheme<br>
+   _Discrete and Continuous Dynamical Systems_ **48**, 30-47
 1. L. Garénaux and H. J. Hupkes — Existence of monostable fronts for a KPP infinite-difference numerical scheme, _Discrete and Continuous Dynamical Systems_ **48**, 30-47 (2026). [DOI](https://doi.org/10.3934/dcds.2025134) - [arXiv](https://arxiv.org/abs/2412.16580)
 1. L. Garénaux and L. M. Rodrigues — Convective stability in scalar balance laws, _Differential Integral Equations_ **38**, 1-2 (2025). [DOI](https://doi.org/10.3934/dcds.2025134) - [arXiv](https://arxiv.org/abs/2412.16580)
 1. L. Garénaux — Nonlinear convective stability of a critical pulled front undergoing a Turing bifurcation at its back: a case study, _SIAM J. Math. Anal._ **56**, 3 (2024). [DOI](https://doi.org/10.1137/21M1451038) - [arXiv](https://arxiv.org/abs/2110.02946)
