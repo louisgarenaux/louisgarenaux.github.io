@@ -24,4 +24,5 @@
    Spectral stability of the critical front in the extended Fisher-KPP equation, _Z. Angew. Math. Phys._ **74**, 71
 
 ### Memoir
-PhD thesis — Asymptotic stability of invasion fronts in reaction-diffusion equations (2022). [HAL]()
+PhD thesis (2022) - [HAL](https://hal.archives-ouvertes.fr/view/index/docid/3726785)<br>
+Asymptotic stability of invasion fronts in reaction-diffusion equations
