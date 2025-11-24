@@ -18,6 +18,9 @@ title: Research
 ## Research texts
 
 ### Preprints
+
+{: start="8"}
+{: reversed="reversed"}
 1. E. Bukieda, L. Garénaux and B. de Rijk - [arXiv](https://arxiv.org/abs/2506.06029)<br>
    Orbital stability of plane waves in the Klein-Gordon equation against localized perturbations
 1. L. Garénaux and B. Hilder - [arXiv](https://arxiv.org/abs/2503.09522) <br>
@@ -27,6 +30,8 @@ title: Research
 
 ### Publications
 
+{:start="5"}
+{: reversed="reversed"}
 1. L. Garénaux and H. J. Hupkes (2026) - [DOI](https://doi.org/10.3934/dcds.2025134) - [arXiv](https://arxiv.org/abs/2412.16580)<br>
    Existence of monostable fronts for a KPP infinite-difference numerical scheme, _Discrete and Continuous Dynamical Systems_ **48**, 30-47
 1. L. Garénaux and L. M. Rodrigues (2025) - [DOI](https://doi.org/10.57262/die038-0102-71) - [arXiv](https://arxiv.org/abs/2401.06677) <br>
@@ -36,7 +41,9 @@ title: Research
 1. M. Avery and L. Garénaux (2023) - [DOI](https://doi.org/10.1007/s00033-023-01960-8) - [arXiv](https://arxiv.org/abs/2009.01506)<br>
    Spectral stability of the critical front in the extended Fisher-KPP equation, _Z. Angew. Math. Phys._ **74**, 71
 
-### Notes
+### Unpublished notes
+{:start="5"}
+{: reversed="reversed"}
 1. L. Garénaux and B. de Rijk - [arXiv](https://arxiv.org/abs/2509.13188)<br>
    Global existence and decay of small solutions in a viscous half Klein–Gordon equation
 
