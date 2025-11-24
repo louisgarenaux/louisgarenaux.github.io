@@ -6,7 +6,12 @@ layout: home
 title: Home
 ---
 
-![Louis Garenaux](assets/images/photo-256.jpg)
+<img src="assets/images/photo-512.jpg" width="300">
+
+<!-- 
+    Pour placer la figure à droite de la page, utiliser
+    <img style="display: block; margin-left: auto;" src="assets/images/photo-512.jpg" width="300">
+-->
 
 ## Short bio
 
