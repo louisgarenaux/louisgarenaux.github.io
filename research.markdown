@@ -42,11 +42,13 @@ title: Research
    Spectral stability of the critical front in the extended Fisher-KPP equation, _Z. Angew. Math. Phys._ **74**, 71
 
 ### Unpublished notes
+
 {:start="5"}
 {: reversed="reversed"}
 1. L. Garénaux and B. de Rijk - [arXiv](https://arxiv.org/abs/2509.13188)<br>
    Global existence and decay of small solutions in a viscous half Klein–Gordon equation
 
 ### Memoir
+
 PhD thesis (2022) - [HAL](https://hal.archives-ouvertes.fr/view/index/docid/3726785)<br>
 Asymptotic stability of invasion fronts in reaction-diffusion equations
