@@ -6,6 +6,13 @@ layout: home
 title: Home
 ---
 
+<img src="assets/images/photo-512.jpg" width="300">
+
+<!-- 
+    Pour placer la figure à droite de la page, utiliser
+    <img style="display: block; margin-left: auto;" src="assets/images/photo-512.jpg" width="300">
+-->
+
 ## Short bio
 
 Louis Garénaux is born in France. He studied mathematics at the [Université de Rennes 1][url-rennes], and obtained a doctoral degree in applied mathematics at the [Institut de Mathématiques de Toulouse][url-toulouse].
