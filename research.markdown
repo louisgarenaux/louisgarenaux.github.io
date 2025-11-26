@@ -53,7 +53,6 @@ Global existence and decay of small solutions in a viscous half Klein–Gordon e
 PhD thesis (2022) - [HAL][thesis]  
 Asymptotic stability of invasion fronts in reaction-diffusion equations
 
-
 [hal]: https://hal.science/search/index/?q=*&authIdPerson_i=736625
 [orcid]: https://orcid.org/0000-0001-5729-5995
 [arxiv]: https://arxiv.org/a/garenaux_l_1.html

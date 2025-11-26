@@ -4,6 +4,7 @@
 
 layout: home
 title: Home
+list_title: News
 ---
 
 <img src="assets/images/photo-512.jpg" width="300">

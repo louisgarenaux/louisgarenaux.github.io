@@ -25,12 +25,39 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
-github_username:  louisgarenaux
+github_username: louisgarenaux
 
 # Build settings
-theme: minima
+# theme: minima
+remote_theme: "jekyll/minima@593a05" # origin/2.5-stable
+#remote_theme: "jekyll/minima@bf9ef9" # origin/master
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+
+minima:
+  skin: classic
+  nav_pages:
+    - research.markdown
+    - home.markdown
+  show_exerpts: false
+  social_links:
+    - title: HAL
+      icon:
+      url: "https://hal.science/search/index/?q=*&authIdPerson_i=736625"
+    - title: ORCID
+      icon:
+      url: "https://orcid.org/0000-0001-5729-5995"
+    - title: arXiv
+      icon:
+      url: "https://arxiv.org/a/garenaux_l_1.html"
+    - title: zbMATH
+      icon:
+      url: "https://zbmath.org/?ml=3&ml-1-f=any&ml-1-v=&ml-1-op=and&ml-2-f=au&ml-2-v=Garenaux&ml-2-op=and&ml-3-f=ti&ml-3-v=&dt=j&dt=a&dt=b&dt=p"
+    - title: Research Gate
+      icon:
+      url: "https://www.researchgate.net/profile/Louis-Garenaux-2"
+  hide_site_feed_link: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.

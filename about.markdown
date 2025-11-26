@@ -3,15 +3,18 @@ layout: page
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## To do list 
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+- Mettre à jour le pied de page
+  - trouver le fichier de layout
+  - essayer de l'ajouter en local et de voir l'effet
+  - modifier le fichier en local 
+  - ajouter date de modification, supprimer contenu inutile.
+- Mettre à jour la page d'accueil
+  - trouver le fichier de layout
+  - tailles des titres
+  - taille des posts
+- Ajouter illustrations
+  - simulations (vidéo / images)
+  - spectre
+- Ajouter description recherche
