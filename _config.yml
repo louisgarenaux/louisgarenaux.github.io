@@ -40,7 +40,6 @@ minima:
   nav_pages:
     - research.markdown
     - home.markdown
-    - about.markdown
   show_exerpts: false
   social_links:
     - title: HAL
