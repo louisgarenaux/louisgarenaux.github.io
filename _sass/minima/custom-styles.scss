@@ -5,3 +5,11 @@
   text-align: justify;
   text-justify: inter-word;
 }
+
+.post-list-heading {
+  @include relative-font-size(1.5);
+}
+
+.post-link {
+  @include relative-font-size(1.3);
+}
