@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Visiting Karlsruhe"
-date:   2025-11-18 14:43:25 +0100
+title:  "Seminar in Karlsruhe"
+date:   2025-11-19 11:30:00 +0100
 categories: seminar
 ---
 
