@@ -27,6 +27,15 @@ img {
   }
 } 
 
+
+.footer-last-update {
+  width: $spacing-unit * 10;
+  //margin-right: 0px;
+  > p {
+    text-align: left;
+  }
+}
+
 /* 
 Si la largeur de l'écran est supérieure à 27em, imposer la largeur de la marge à gauche plutôt que de centrer l'image.
 1em = 16px, 3em = 48px, 27em = 432px 

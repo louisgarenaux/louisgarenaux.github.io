@@ -369,6 +369,10 @@ img { border-radius: 0.5em; display: block; margin-left: auto; margin-right: aut
 
 @media (min-width: 27em) { img { margin-left: 3em; } }
 
+.footer-last-update { width: 300px; }
+
+.footer-last-update > p { text-align: left; }
+
 /* 
 Si la largeur de l'écran est supérieure à 27em, imposer la largeur de la marge à gauche plutôt que de centrer l'image.
 1em = 16px, 3em = 48px, 27em = 432px 
