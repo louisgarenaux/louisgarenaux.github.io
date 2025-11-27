@@ -365,4 +365,16 @@ table td { border: 1px solid #e7e7e7; }
 
 .post-link { font-size: 1.3rem; }
 
+/*
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+La photo fait 336px = 21em ? Conversion 1em=16px. On suppose que oui dans la suite. Si la taille de l'écran est supérieure à 16em, placer la photo à gauche, avec une marge pour assurer la continuité. Deux options.
+1. Faire une marge de 3.5em=56px, et transition pour une taille d'écran à 28em = 448px.
+2. Faire une marge de 3em=48px, et transition pour une taille d'écran à 27em = 432px.
+*/
+
 /*# sourceMappingURL=style.css.map */
