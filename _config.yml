@@ -44,10 +44,10 @@ plugins:
   - jekyll-seo-tag
 
 path:
-  preprints: article-information/preprints.markdown
-  publications: article-information/publications.markdown
-  notes: article-information/notes.markdown
-  memoirs: article-information/memoirs.markdown
+  preprints: assets/articles-information/preprints.markdown
+  publications: assets/articles-information/publications.markdown
+  notes: assets/articles-information/notes.markdown
+  memoirs: assets/articles-information/memoirs.markdown
 
 minima:
   skin: classic
