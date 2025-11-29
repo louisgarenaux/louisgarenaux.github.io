@@ -3,16 +3,9 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-title:
+title: Home
 list_title: News
 ---
-
-<img src="assets/images/photo-512.jpg" width="300">
-
-<!-- 
-    Pour placer la figure à droite de la page, utiliser
-    <img style="display: block; margin-left: auto;" src="assets/images/photo-512.jpg" width="300">
--->
 
 ## Short bio
 
