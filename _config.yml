@@ -52,8 +52,8 @@ path:
 minima:
   skin: classic
   nav_pages:
+    - index.markdown
     - research.markdown
-    - home.markdown
   show_exerpts: false
   social_links:
     - title: HAL
