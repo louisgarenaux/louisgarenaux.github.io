@@ -48,12 +48,14 @@ path:
   publications: assets/articles-information/publications.markdown
   notes: assets/articles-information/notes.markdown
   memoirs: assets/articles-information/memoirs.markdown
+  internships: assets/articles-information/internships.markdown
 
 minima:
   skin: classic
   nav_pages:
     - index.markdown
     - research.markdown
+    - others.markdown
   show_exerpts: false
   social_links:
     - title: HAL
