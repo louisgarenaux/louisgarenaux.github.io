@@ -18,3 +18,10 @@ permalink: /about/
   - simulations (vidéo / images)
   - spectre
 - Ajouter description recherche
+
+
+
+
+## Utilisation du include.
+
+Include et include_relative ont un fonctionnement similaire. Il permettent d'inclure un fichier présent dans le dossier _include ou dans le dossier où la commande est appelée. Dans les deux cas, on ne peut pas remonter l'arborescence (../ est interdit).

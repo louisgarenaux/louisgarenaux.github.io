@@ -18,13 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-last_update: November 2025
+last_update: January 2026
 
 title: Louis Garénaux
 
 author:
   name: Louis Garénaux
-  email: louis.garenaux@gmx.fr
+  email: louis.garenaux@inria.fr
+#  email: louis.garenaux@gmx.fr
 
 description: >- # this means to ignore newlines until "baseurl:"
   Louis Garénaux is a researcher in mathematics. He is interested in long time stability for partial differential equations and in travelling wave solutions. 
@@ -44,11 +45,12 @@ plugins:
   - jekyll-seo-tag
 
 path:
-  preprints: assets/articles-information/preprints.markdown
-  publications: assets/articles-information/publications.markdown
-  notes: assets/articles-information/notes.markdown
-  memoirs: assets/articles-information/memoirs.markdown
-  internships: assets/articles-information/internships.markdown
+  preprints: markdown/articles-information/preprints.markdown
+  publications: markdown/articles-information/publications.markdown
+  notes: markdown/articles-information/notes.markdown
+  memoirs: markdown/articles-information/memoirs.markdown
+  internships: markdown/articles-information/internships.markdown
+  address: markdown/address.markdown
 
 minima:
   skin: classic

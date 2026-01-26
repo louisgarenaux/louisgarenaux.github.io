@@ -3,7 +3,7 @@
 {: start="5"}
 {: reversed="reversed"}
 1. L. Garénaux and H. J. Hupkes (2026) - [DOI][garenaux-hupkes:26-doi] - [arXiv][garenaux-hupkes:26-arxiv]  
-Existence of monostable fronts for a KPP infinite-difference numerical scheme, _Discrete and Continuous Dynamical Systems_ **48**, 30-47
+Existence of monostable fronts for a KPP infinite-difference numerical scheme, _Discrete Contin. Dyn. Syst._ **48**, 30-47
 1. L. Garénaux and L. M. Rodrigues (2025) - [DOI][garenaux-rodrigues:25-doi] - [arXiv][garenaux-rodrigues:25-arxiv]  
 Convective stability in scalar balance laws, _Differential Integral Equations_ **38**, 1-2
 1. L. Garénaux (2024) - [DOI][garenaux:24-doi] - [arXiv][garenaux:24-arxiv]  

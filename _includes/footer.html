@@ -10,13 +10,14 @@
       {%- if site.author %}
         <ul class="contact-list">
           {% if site.author.email -%}
-            <li>Contact: <a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+            <p><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
           {%- endif %}
         </ul>
       {%- endif %}
       </div>
       
       <div class="footer-last-update">
+        
         <p>Updated: {{ site.last_update }}</p>
       </div>
     </div>

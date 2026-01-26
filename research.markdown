@@ -27,24 +27,24 @@ title: Research
 ### Preprints
 
 {%- if site.path.preprints -%}
-  {% include_relative {{ site.path.preprints }} %}
+  {% include {{ site.path.preprints }} %}
 {%- endif -%}
 
 ### Published articles
 
 {%- if site.path.publications -%}
-  {% include_relative {{ site.path.publications }} %}
+  {% include {{ site.path.publications }} %}
 {%- endif -%}
 
 ### Unpublished notes
 
 {%- if site.path.notes -%}
-  {% include_relative {{ site.path.notes }} %}
+  {% include {{ site.path.notes }} %}
 {%- endif -%}
 
 ### Memoir
 
 {%- if site.path.memoirs -%}
-  {% include_relative {{ site.path.memoirs }} %}
+  {% include {{ site.path.memoirs }} %}
 {%- endif -%}
 

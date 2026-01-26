@@ -10,5 +10,5 @@ title: Others
 ### Internship reports
 
 {%- if site.path.internships -%}
-  {% include_relative {{ site.path.internships }} %}
+  {% include {{ site.path.internships }} %}
 {%- endif -%}
