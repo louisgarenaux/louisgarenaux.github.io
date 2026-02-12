@@ -12,3 +12,6 @@ title: Others
 {%- if site.path.internships -%}
   {% include {{ site.path.internships }} %}
 {%- endif -%}
+
+
+[url-assertion]: https://framaforms.org/what-do-you-think-of-this-assertion-1769675854
