@@ -1,0 +1,79 @@
+\documentclass{standalone}
+
+\usepackage{./time-schedule}
+\usepackage{hyperref}
+
+
+
+\begin{document}
+\begin{tikzpicture}
+\begin{week}{start=8:00, end=19:00, title=Week 1}
+
+\begin{day}{1}
+\slot[start=10:00,  end=12:00, color=cours2]{Class}
+\slot[start=13:00,  end=16:00, color=white]{}
+\end{day}
+
+\begin{day}{2}
+\slot[start=8:00,  end=12:00, color=white]{}
+\slot[start=14:00,  end=16:00, color=math1]{Meeting ...}
+\end{day}
+
+\begin{day}{3}
+\slot[start=8:00,  end=11:00, color=white]{}
+\slot[start=11:00,  end=12:00, color=talk]{Seminar\\ Room 1.001}
+\slot[start=14:00,  end=17:00, color=white]{}
+\end{day}
+
+\begin{day}{4}
+\slot[start=8:30,  end=10:00, color=white]{}
+\slot[start=10:00,  end=12:00, color=white]{}
+\slot[start=13:00,  end=15:30, color=commu4]{Application}
+\slot[start=15:30,  end=18:00, color=white]{}
+\end{day}
+
+\begin{day}{5}
+\slot[start=9:00,  end=12:00, color=white]{}
+\slot[start=13:00,  end=15:00, color=white]{}
+\slot[start=15:00,  end=17:30, color=white]{}
+\end{day}
+
+
+\end{week}
+\end{tikzpicture}
+\end{document}
+
+
+
+\begin{day}{1}
+\slot[start=9:00,  end=12:00, color=white]{}
+\slot[start=14:00, end=16:00, color=white]{}
+\slot[start=16:00, end=18:00, color=white]{}
+\end{day}
+
+\begin{day}{2}
+\slot[start=8:30,  end=12:00, color=white]{}
+\slot[start=14:00, end=16:00, color=white]{}
+\slot[start=16:00, end=17:30, color=white]{}
+\end{day}
+
+\begin{day}{3}
+\slot[start=9:00, end=11:15, color=white]{}
+\slot[start=11:30, end=12:30, color=talk]{seminar 3.069\\ speaker}
+\slot[start=14:30, end=16:00, color=white]{}
+\slot[start=16:00, end=18:00, color=white]{}
+\end{day}
+
+\begin{day}{4}
+\slot[start=9:00,  end=12:00, color=white]{}
+%\slot[start=13:00, end=14:00, color=talk]{Tea session 1.058}
+\slot[start=14:00, end=16:00, color=white]{}
+\slot[start=16:00, end=18:00, color=white]{}
+\end{day}
+
+\begin{day}{5}
+\slot[start=9:00,  end=12:00, color=white]{}
+\slot[start=14:00, end=16:00, color=white]{}
+\slot[start=16:00, end=17:00, color=orga]{Organisation}
+\end{day}
+

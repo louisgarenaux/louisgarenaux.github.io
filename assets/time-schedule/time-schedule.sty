@@ -1,0 +1,413 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                           %
+%    		 time-schedule.sty  v1.4     UTF8     			%
+%                                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                           %
+%					Created by Louis Garénaux				%
+%                                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                           %
+%					Inspiration from: 						%
+%				pas-edt.sty file created by 				%
+% 					Stéphane PASQUET						%
+%                                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{time-schedule}[2025/04/30]
+
+
+
+% % % % % % % % % %
+% % % Options % % %
+% % % % % % % % % %
+
+\ProcessOptions\relax
+
+
+
+% % % % % % % % % % %
+% % % Packages  % % %
+% % % % % % % % % % %
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{babel}
+
+\RequirePackage{xkeyval}
+\RequirePackage{multido}
+\RequirePackage{tikz}
+\RequirePackage{varwidth}
+
+
+
+% % % % % % % % % % % % % % % 
+% % % Additional files  % % %
+% % % % % % % % % % % % % % %
+
+% Predefined colors
+\input{time-schedule-colors.tex}
+
+
+
+% % % % % % % % %
+% % % Body  % % %
+% % % % % % % % %
+
+% % % % % % % % % %
+% Main functions  %
+
+\newenvironment{week}[1]{
+	\pgfkeys{ts/week,#1}
+	\TSsetlengths
+	\TSprintouterframe
+	\TSprintinnerframe
+%		\TSprintmargins{densely dotted}{dashed}
+	\TSprintcolumns
+	\TSprintrows
+	\TSprintdays
+	\TSprinthours
+}{
+	\TSprinttitle
+}
+
+% ¡ Caution ! 
+% The day counter is already defined in latex. As long as you use the present package in a standalone class, that will pose no problem. If not, simply give the following environment another name (e.g. Day, jour, journée, etc).
+\renewenvironment{day}[1]{
+	\pgfkeys{ts/slot, day=#1}
+}{}
+
+
+% % % % %
+% keys  %
+
+% Creating our own key directories
+\pgfkeys{/ts/.is family}
+\pgfkeys{/ts/page/.is family}
+\pgfkeys{/ts/week/.is family}
+\pgfkeys{/ts/hour/.is family}
+\pgfkeys{/ts/colors/.is family}
+\pgfkeys{/ts/slot/.is family}
+\pgfkeys{/ts/var/.is family}
+
+% Outer frame
+\pgfkeys{ts/page, 
+	width/.initial=21, 
+	height/.initial=14.8, 
+	border/.initial=1,
+	topborder/.initial=2,
+}
+
+% Week (inner frame)
+\pgfkeys{ts/week, 
+	title/.initial=Titre, 
+	width/.initial=0, 
+	height/.initial=0, 
+	top/.initial=8,
+	bottom/.initial=18,
+	start/.code args={#1:#2}{
+		\pgfmathsetmacro{\TSvarone}{#1 + 1/60 * #2}
+		\pgfkeyssetevalue{/ts/week/top}{\TSvarone}
+	},
+	end/.code args={#1:#2}{
+		\pgfmathsetmacro{\TSvarone}{#1 + 1/60 * #2}
+		\pgfkeyssetevalue{/ts/week/bottom}{\TSvarone}
+	},
+	start/.default=8:00,
+	end/.default=18:00,
+	topborder/.initial=1,
+	leftborder/.initial=1.2,
+	startday/.initial=1,
+	endday/.initial=5,
+	daynumber/.initial=5,
+	daywidth/.initial=0,
+}
+
+% Hour
+\pgfkeys{ts/hour, 
+	height/.initial=0, 
+	number/.initial=0,
+	number/.code={
+		\addtocounter{TShournumber}{#1}
+		%		\pgfmathsetmacro{\TSvarone}{#1+\pgfkeysvalueof{/ts/hour/number}}
+		%		\pgfkeyssetevalue{/ts/hour/number}{\TSvarone}
+	},
+}
+
+\newcounter{TShournumber}
+\setcounter{TShournumber}{0}
+
+% Colors
+\pgfkeys{ts/colors, 
+	daybox/.initial=white,
+}
+
+% Slots
+\pgfkeys{ts/slot,
+	day/.initial=1,
+	top/.initial=0,
+	bottom/.initial=0,
+	start/.code args={#1:#2}{
+		\pgfmathsetmacro{\TSvarone}{#1 + 1/60 * #2}
+		\pgfkeyssetevalue{/ts/slot/top}{\TSvarone}
+	},
+	end/.code args={#1:#2}{
+		\pgfmathsetmacro{\TSvarone}{#1 + 1/60 * #2}
+		\pgfkeyssetevalue{/ts/slot/bottom}{\TSvarone}
+	},
+	color/.initial=white,
+	opacity/.initial=0.9,
+	length/.initial=0,
+	text width/.initial=0,
+	shape/.initial=full,
+	top left/.initial={0,0},
+	bottom right/.initial={0,0},
+	center/.initial={0,0},
+}
+
+% Variables
+\newcommand{\TSvarone}{}
+\newcommand{\TSvartwo}{}
+\newcommand{\TSvarthree}{}
+\newcommand{\TSvarfour}{}
+\newcommand{\TSvarfive}{}
+\newcommand{\TSvarsix}{}
+
+
+% % % % % % % % % % % % % % % % % % % % % % %
+% Setting coordinates, lengths and numbers  %
+
+\newcommand{\TSsetlengths}{
+	\pgfkeys{/ts/week/top}
+	
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/page/width} - 2*\pgfkeysvalueof{/ts/page/border} - \pgfkeysvalueof{/ts/week/leftborder}}
+	\pgfkeyssetevalue{/ts/week/width}{\TSvarone}
+	
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/page/height} - \pgfkeysvalueof{/ts/page/border} - \pgfkeysvalueof{/ts/page/topborder} - \pgfkeysvalueof{/ts/week/topborder}}
+	\pgfkeyssetevalue{/ts/week/height}{\TSvarone}
+	
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/week/endday} - \pgfkeysvalueof{/ts/week/startday} + 1)}
+	\pgfkeyssetevalue{/ts/week/daynumber}{\TSvarone}
+	
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/week/width} / \pgfkeysvalueof{/ts/week/daynumber}}
+	\pgfkeyssetevalue{/ts/week/daywidth}{\TSvarone}
+	
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/week/height} / (\pgfkeysvalueof{/ts/week/bottom} - \pgfkeysvalueof{/ts/week/top})}
+	\pgfkeyssetevalue{/ts/hour/height}{\TSvarone}
+}
+
+\newcommand{\TSgetxposition}[2]{
+	% #1 stands for a day number (starting at 1), #2 stands for an hour. Return the x-coordinate of the top left corner corresponding slot.
+	\pgfkeysvalueof{/ts/page/border} + \pgfkeysvalueof{/ts/week/leftborder} + (#1-1) * \pgfkeysvalueof{/ts/week/daywidth}
+}
+
+\newcommand{\TSgetyposition}[2]{
+	% #1 stands for a day number, #2 stands for an hour. Return the y-coordinate of the top left corner corresponding slot.
+	-\pgfkeysvalueof{/ts/page/topborder} - \pgfkeysvalueof{/ts/week/topborder} - (#2-\pgfkeysvalueof{/ts/week/top}) * \pgfkeysvalueof{/ts/hour/height}
+}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Drawing lines (frames, margins, columns and rows) % 
+
+\newcommand{\TSprintouterframe}[1][white]{
+	\clip (0,-\pgfkeysvalueof{/ts/page/height}) rectangle (\pgfkeysvalueof{/ts/page/width},0);
+	\draw[#1] (0,-\pgfkeysvalueof{/ts/page/height}) rectangle (\pgfkeysvalueof{/ts/page/width},0);
+}
+
+\newcommand{\TSprintinnerframe}[1][black]{
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/page/border} + \pgfkeysvalueof{/ts/week/leftborder}}
+	\pgfmathsetmacro{\TSvartwo}{-\pgfkeysvalueof{/ts/page/height} + \pgfkeysvalueof{/ts/page/border}}
+	\pgfmathsetmacro{\TSvarthree}{\pgfkeysvalueof{/ts/page/width} - \pgfkeysvalueof{/ts/page/border}}
+	\pgfmathsetmacro{\TSvarfour}{-\pgfkeysvalueof{/ts/page/topborder} - \pgfkeysvalueof{/ts/week/topborder}}
+	\draw[#1] (\TSvarone, \TSvartwo) rectangle (\TSvarthree, \TSvarfour);
+%	\clip (\TSvarone, \TSvartwo) rectangle (\TSvarthree, \TSvarfour);
+}
+
+\newcommand{\TSclipinnerframe}{
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/page/border} + \pgfkeysvalueof{/ts/week/leftborder}}
+	\pgfmathsetmacro{\TSvartwo}{-\pgfkeysvalueof{/ts/page/height} + \pgfkeysvalueof{/ts/page/border}}
+	\pgfmathsetmacro{\TSvarthree}{\pgfkeysvalueof{/ts/page/width} - \pgfkeysvalueof{/ts/page/border}}
+	\pgfmathsetmacro{\TSvarfour}{-\pgfkeysvalueof{/ts/page/topborder} - \pgfkeysvalueof{/ts/week/topborder}}
+	\clip (\TSvarone, \TSvartwo) rectangle (\TSvarthree, \TSvarfour);
+}
+
+
+\newcommand{\TSprintmargins}[2]{
+	% Outer margins
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/page/width} - \pgfkeysvalueof{/ts/page/border}}
+	\pgfmathsetmacro{\TSvartwo}{-\pgfkeysvalueof{/ts/page/height} + \pgfkeysvalueof{/ts/page/border}}
+	\draw[#1] (\pgfkeysvalueof{/ts/page/border}, 0) -- ++(0, - \pgfkeysvalueof{/ts/page/height});
+	\draw[#1] (\TSvarone, 0) -- ++(0, -\pgfkeysvalueof{/ts/page/height});
+	\draw[#1] (0,-\pgfkeysvalueof{/ts/page/topborder}) -- ++(\pgfkeysvalueof{/ts/page/width},0);
+	\draw[#1] (0,\TSvartwo) -- ++(\pgfkeysvalueof{/ts/page/width},0);
+	
+	% Inner margins
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/page/border} + \pgfkeysvalueof{/ts/week/leftborder}}
+	\pgfmathsetmacro{\TSvartwo}{-\pgfkeysvalueof{/ts/page/height} + \pgfkeysvalueof{/ts/page/border} + \pgfkeysvalueof{/ts/page/topborder}}
+	\pgfmathsetmacro{\TSvarthree}{-\pgfkeysvalueof{/ts/page/topborder}-\pgfkeysvalueof{/ts/week/topborder}}
+	\pgfmathsetmacro{\TSvarfour}{\pgfkeysvalueof{/ts/page/width} - 2*\pgfkeysvalueof{/ts/page/border}}
+	\draw[#2] (\TSvarone, -\pgfkeysvalueof{/ts/page/topborder}) -- ++(0,\TSvartwo);
+	\draw[#2] (\pgfkeysvalueof{/ts/page/border},\TSvarthree) -- ++(\TSvarfour,0);
+}
+
+\newcommand{\TSprintcolumns}[1][]{
+	\pgfmathsetmacro{\TSvarfour}{\pgfkeysvalueof{/ts/week/daynumber} - 1}
+	\pgfmathsetmacro{\TSvarthree}{-\pgfkeysvalueof{/ts/week/height}}
+	\foreach \k in {1, ..., \TSvarfour}{
+		\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/page/border} + \pgfkeysvalueof{/ts/week/leftborder} + \k * \pgfkeysvalueof{/ts/week/daywidth}}
+		\pgfmathsetmacro{\TSvartwo}{-\pgfkeysvalueof{/ts/page/topborder} - \pgfkeysvalueof{/ts/week/topborder}}
+		\draw[#1] (\TSvarone,\TSvartwo) -- ++(0,\TSvarthree);
+	}
+}
+
+\newcommand{\TSprintrows}[1][loosely dashed]{
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/week/top}}
+	\pgfmathparse{ceil(\TSvarone)}
+	\pgfmathtruncatemacro{\TSvarone}{\pgfmathresult}
+	\pgfmathsetmacro{\TSvartwo}{\TSvarone+1}
+	
+	\foreach \k in {\TSvarone,\TSvartwo,..., \pgfkeysvalueof{/ts/week/bottom}}{
+		\pgfmathsetmacro{\TSvarthree}{\TSgetxposition{1}{\k}}
+		\pgfmathsetmacro{\TSvarfour}{\TSgetyposition{1}{\k}}
+		\draw[#1, thin] (\TSvarthree, \TSvarfour) -- ++(\pgfkeysvalueof{/ts/week/width}, 0);
+	}
+}
+
+
+% % % % % % % % % % % % % % % % % % % % % % %
+% Printing texts (title, day names, hours)  %
+
+\newcommand{\TSprinttitle}[1][\bfseries\LARGE]{
+	\node at (0.5*\pgfkeysvalueof{/ts/page/width},-0.5*\pgfkeysvalueof{/ts/page/topborder}) {#1\pgfkeysvalueof{/ts/week/title} : \TSprinthournumber h};
+}
+
+\newcommand{\TSprintdays}[1][draw, rectangle, rounded corners=5]{
+	\foreach \k in {%
+			1%
+			,...,%
+			\pgfkeysvalueof{/ts/week/daynumber}%
+		}{
+		\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/page/border} + \pgfkeysvalueof{/ts/week/leftborder} + (\k-0.5) * \pgfkeysvalueof{/ts/week/daywidth}}
+		\pgfmathsetmacro{\TSvartwo}{-\pgfkeysvalueof{/ts/page/topborder} - 0.5 * \pgfkeysvalueof{/ts/week/topborder}}
+		\pgfmathtruncatemacro{\TSvarthree}{\pgfkeysvalueof{/ts/week/startday} + \k - 1}
+		\node[#1, fill=\pgfkeysvalueof{/ts/colors/daybox}] at (\TSvarone,\TSvartwo) {\daysname{\TSvarthree}};
+	}
+}
+
+\newcommand{\TSprinthours}{
+	% here we use the "truncate" variant of "setmacro" to remove the decimal part.
+	\pgfmathsetmacro{\TSvarone}{\pgfkeysvalueof{/ts/week/top}}
+	\pgfmathparse{2*ceil(\TSvarone/2)}
+	\pgfmathtruncatemacro{\TSvarone}{\pgfmathresult}
+	\pgfmathtruncatemacro{\TSvartwo}{\TSvarone + 2}
+	\foreach \k in {\TSvarone, \TSvartwo, ..., \pgfkeysvalueof{/ts/week/bottom}}{
+		\pgfmathsetmacro{\TSvarthree}{\pgfkeysvalueof{/ts/page/border} + 0.5*\pgfkeysvalueof{/ts/week/leftborder}}
+		\pgfmathsetmacro{\TSvarfour}{
+			-\pgfkeysvalueof{/ts/page/topborder} - \pgfkeysvalueof{/ts/week/topborder} - (\k-\pgfkeysvalueof{/ts/week/top}) * \pgfkeysvalueof{/ts/hour/height}
+		}
+		\node at (\TSvarthree, \TSvarfour) {\k:00}; 
+	}
+}
+
+\newcommand{\daysname}[1]{%
+	\if#11%
+		Monday%
+	\else\if#12%
+		Tuesday%
+	\else\if#13%
+		Wednesday%
+	\else\if#14%
+		Thursday%
+	\else\if#15%
+		Friday%
+	\else\if#16%
+		Saturday%
+	\else\if#17%
+		Sunday%
+	\else\if#10%
+		Sunday%
+	\else%
+		#1%
+	\fi%
+	\fi%
+	\fi%
+	\fi%
+	\fi%
+	\fi%
+	\fi%
+	\fi%
+}
+
+\newcommand{\TSprinthournumber}{%
+	\pgfmathtruncatemacro{\TSvarone}{round(\theTShournumber/10)/10}%
+	\TSvarone%
+}
+
+
+
+% % % % % % % % % % % % % % % % % % %
+% Slots (coordinates and printing)  %
+
+\newcommand{\TSsetslotcoordinates}{
+	% top left	
+	\pgfmathsetmacro{\TSvarone}{
+		\TSgetxposition{\pgfkeysvalueof{/ts/slot/day}-\pgfkeysvalueof{/ts/week/startday}+1}{\pgfkeysvalueof{/ts/slot/top}}
+	}
+	\pgfmathsetmacro{\TSvartwo}{
+		\TSgetyposition{\pgfkeysvalueof{/ts/slot/day}}{\pgfkeysvalueof{/ts/slot/top}}
+	}
+	\pgfkeyssetevalue{/ts/slot/top left}{\TSvarone, \TSvartwo}
+	
+	% bottom right
+	\pgfmathsetmacro{\TSvarthree}{
+		\TSgetxposition{1+\pgfkeysvalueof{/ts/slot/day}-\pgfkeysvalueof{/ts/week/startday}+1}{\pgfkeysvalueof{/ts/slot/bottom}}
+	}
+	\pgfmathsetmacro{\TSvarfour}{
+		\TSgetyposition{1+\pgfkeysvalueof{/ts/slot/day}}{\pgfkeysvalueof{/ts/slot/bottom}}
+	}
+	\pgfkeyssetevalue{/ts/slot/bottom right}{\TSvarthree, \TSvarfour}
+	
+	% center
+	\pgfmathsetmacro{\TSvarfive}{(\TSvarone + \TSvarthree)/2}
+	\pgfmathsetmacro{\TSvarsix}{(\TSvartwo + \TSvarfour)/2}
+	\pgfkeyssetevalue{/ts/slot/center}{\TSvarfive, \TSvarsix}
+	
+	% increment hour number
+	\pgfmathtruncatemacro{\TSvarone}{
+		100 * (\TSvartwo - \TSvarfour) / \pgfkeysvalueof{/ts/hour/height}
+	}
+	\addtocounter{TShournumber}{\TSvarone}
+}
+
+\newcommand{\slot}[2][]{%
+	\pgfkeys{ts/slot, #1}
+	\TSsetslotcoordinates
+	\pgfmathsetmacro{\TSvarone}{0.9*\pgfkeysvalueof{/ts/week/daywidth}}
+	\pgfkeyssetevalue{/ts/slot/text width}{\TSvarone}
+	\begin{scope}
+		\TSclipinnerframe
+		\draw[
+		very thick,
+		fill=\pgfkeysvalueof{/ts/slot/color}, 
+		opacity=\pgfkeysvalueof{/ts/slot/opacity}, 
+		] (\pgfkeysvalueof{/ts/slot/top left}) rectangle (\pgfkeysvalueof{/ts/slot/bottom right});
+		
+		\clip (\pgfkeysvalueof{/ts/slot/top left}) rectangle (\pgfkeysvalueof{/ts/slot/bottom right});
+		
+		\draw (\pgfkeysvalueof{/ts/slot/center}) node {%
+			\begin{varwidth}{\pgfkeysvalueof{/ts/slot/text width}cm}%
+				\centering{#2}%
+			\end{varwidth}%
+		};
+	\end{scope}
+}
+
+
+% % % % % % % % % % % %
+% % % End of file % % %
+% % % % % % % % % % % %
+
+\endinput
