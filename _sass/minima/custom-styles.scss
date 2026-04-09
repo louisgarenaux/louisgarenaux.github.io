@@ -27,19 +27,21 @@
 }
 
 .home {
-  img {
-    //border-radius: 0.5em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 0 1em 0;
-  }
-
-  @media (min-width:27em) {
+  .picture {
     img {
-      margin-left: 3em;
+      //border-radius: 0.5em;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 0 1em 0;
     }
-  } 
+  
+    @media (min-width:27em) {
+      img {
+        margin-left: 3em;
+      }
+    } 
+  }
 }
 
 .footer-last-update {
