@@ -366,13 +366,23 @@ table td { border: 1px solid #e7e7e7; }
 
 .post-link { font-size: 1.3rem; }
 
-.home .picture img { display: block; margin-left: auto; margin-right: auto; padding: 0 0 1em 0; }
+.home img { display: block; margin-left: auto; margin-right: auto; padding: 0 0 1em 0; }
 
-@media (min-width: 27em) { .home .picture img { margin-left: 3em; } }
+@media (min-width: 27em) { .home img { margin-left: 3em; } }
+
+.home .address { display: block; margin-left: auto; margin-right: auto; }
+
+.home .address > p { text-align: right; }
 
 .footer-last-update { width: 300px; }
 
 .footer-last-update > p { text-align: right; }
+
+.two_blocs .left_block { text-align: left; }
+
+.two_blocs .right_block { text-align: right; }
+
+@media (min-width: 27em) { .two_blocs { text-align: center; } }
 
 /* 1em = 16px, 3em = 48px, 27em = 432px */
 

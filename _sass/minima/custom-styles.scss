@@ -27,20 +27,27 @@
 }
 
 .home {
-  .picture {
-    img {
-      //border-radius: 0.5em;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 0 1em 0;
-    }
+  img {
+    //border-radius: 0.5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0 1em 0;
+  }
   
-    @media (min-width:27em) {
-      img {
-        margin-left: 3em;
-      }
-    } 
+  @media (min-width:27em) {
+    img {
+      margin-left: 3em;
+    }
+  } 
+  
+  .address {
+    > p {
+      text-align: right;
+    }
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -51,5 +58,19 @@
     text-align: right;
   }
 }
+
+.two_blocs {
+  .left_block {
+    text-align: left;
+  }
+  .right_block {
+    text-align: right;
+  }
+  @media (min-width:27em) {
+    text-align:center;
+  }
+}
+
+
 
 /* 1em = 16px, 3em = 48px, 27em = 432px */
