@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-last_update: April 2026
+last_update: May 2026
 
 title: Louis Garénaux
 
 author:
   name: Louis Garénaux
-  email: louis.garenaux@inria.fr
-#  email: louis.garenaux@gmx.fr
+#  email: louis.garenaux@inria.fr
+  email: louis.garenaux@gmx.fr
 
 description: >- # this means to ignore newlines until "baseurl:"
   Louis Garénaux is a researcher in mathematics. He is interested in long time stability for partial differential equations and in travelling wave solutions. 
