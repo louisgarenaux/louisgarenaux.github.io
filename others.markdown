@@ -14,8 +14,8 @@ Please let me know if you are aware of partial or complete resolutions of these.
   - The player contributions have disjoint support in space, disjoint support in time, both in time and space.
   - One player tries to reach the zero state, the other to prevent it.
   - Both player get assigned a target heat distribution, and try to reach it.
-- *Connection between SDE and PDE.* The Feynman-Kac formula links Brownian processes to heat equation, see [Wikipedia][wiki-Feynman-Kac]. Can this link be extended to other PDEs? For example, does there exists a random process whose expectation solves the linear Korteweg-de Vries equation? Personal guess: look for a process with non-zero cubic variation.
-- *Spectral measure for differential operator with non-constant coefficients.* Heteroclinic waves are associated to a two dimensional continuous spectrum, see [here][spectrum-KPP]. Can a spectral measure be associated to it? Explicit computation is known for constant coefficients using Fourier transform.
+- *Connection between SDE and PDE.* The Feynman-Kac formula links Brownian processes to heat equation. Can this link be extended to other PDEs? For example, does there exists a random process whose expectation solves the linear Korteweg-de Vries equation? Personal guess: look for a process with non-zero cubic variation.
+- *Spectral measure for differential operator with non-constant coefficients.* Heteroclinic waves are associated to a two dimensional continuous spectrum. Can a spectral measure be associated to it? Explicit computation is known for constant coefficients using Fourier transform.
 
 ### Tools
 
@@ -30,8 +30,6 @@ Please let me know if you are aware of partial or complete resolutions of these.
 {%- endif -%}
 
 
-[wiki-Feynman-Kac]: 
-[spectrum-KPP]:
 [meld]: https://meldmerge.org/
 [time-schedule]: assets/time-schedule.zip
 [regexp]: https://regexone.com/
