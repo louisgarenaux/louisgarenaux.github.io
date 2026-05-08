@@ -24,6 +24,8 @@ title: Research
 
 ## Research texts
 
+[Articles summary][research-summary]
+
 ### Preprints
 
 {%- if site.path.preprints -%}
@@ -48,3 +50,5 @@ title: Research
   {% include {{ site.path.memoirs }} %}
 {%- endif -%}
 
+
+[research-summary]: assets/research-summary.pdf
