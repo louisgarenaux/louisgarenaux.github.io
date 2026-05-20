@@ -10,7 +10,8 @@ list_title: News
 {%- if site.path.address -%}
   {% include {{  site.path.address  }} %}
 {%- endif -%}
-      
+
+
 ## Short bio
 
 Louis Garénaux is born in France. He studied mathematics at the [Université de Rennes 1][url-rennes], and obtained a doctoral degree in applied mathematics at the [Institut de Mathématiques de Toulouse][url-toulouse].
