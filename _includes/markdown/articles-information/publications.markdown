@@ -1,10 +1,12 @@
 
 
-{: start="7"}
+{: start="8"}
 {: reversed="reversed"}
-1. L. Garénaux and B. Hilder (2026) - [doi][garenaux-hilder:26-doi] - [arXiv][garenaux-Hilder:26-arxiv]  
+1. E. Bukieda, L. Garénaux and B. de Rijk - [DOI][bukieda-garenaux-deRijk:26-doi] - [arXiv][bukieda-garenaux-deRijk:26-arxiv]  
+Orbital stability of plane waves in the Klein-Gordon equation against localized perturbations
+1. L. Garénaux and B. Hilder (2026) - [DOI][garenaux-hilder:26-doi] - [arXiv][garenaux-Hilder:26-arxiv]  
 Linear convective stability of a front superposition with unstable connecting state, _Nonlinear Differential Equations Appl. NoDEA_ **33**, 4
-1. L. Garénaux and B. de Rijk (2026) - [doi][garenaux-deRijk:26-doi] - [arXiv][garenaux-deRijk:26-arxiv]  
+1. L. Garénaux and B. de Rijk (2026) - [DOI][garenaux-deRijk:26-doi] - [arXiv][garenaux-deRijk:26-arxiv]  
 Long time behavior of small solutions in the viscoelastic Klein-Gordon equation, _Journal of Nonlinear Waves_ **2**, e5
 1. L. Garénaux and H. J. Hupkes (2026) - [DOI][garenaux-hupkes:26-doi] - [arXiv][garenaux-hupkes:26-arxiv]  
 Existence of monostable fronts for a KPP infinite-difference numerical scheme, _Discrete Contin. Dyn. Syst._ **48**, 30-47
@@ -16,6 +18,8 @@ Nonlinear convective stability of a critical pulled front undergoing a Turing bi
 Spectral stability of the critical front in the extended Fisher-KPP equation, _Z. Angew. Math. Phys._ **74**, 71
 
 
+[bukieda-garenaux-deRijk:26-doi]: https://doi.org/10.1063/5.0331730
+[bukieda-garenaux-deRijk:26-arxiv]: https://arxiv.org/abs/2506.06029
 [garenaux-hilder:26-doi]: https://doi.org/10.1007/s00030-026-01224-0
 [garenaux-Hilder:26-arxiv]: https://arxiv.org/abs/2503.09522
 [garenaux-deRijk:26-doi]: https://doi.org/10.1017/jnw.2026.10032
