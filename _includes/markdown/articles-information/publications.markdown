@@ -2,8 +2,8 @@
 
 {: start="8"}
 {: reversed="reversed"}
-1. E. Bukieda, L. Garénaux and B. de Rijk - [DOI][bukieda-garenaux-deRijk:26-doi] - [arXiv][bukieda-garenaux-deRijk:26-arxiv]  
-Orbital stability of plane waves in the Klein-Gordon equation against localized perturbations
+1. E. Bukieda, L. Garénaux and B. de Rijk (2026) - [DOI][bukieda-garenaux-deRijk:26-doi] - [arXiv][bukieda-garenaux-deRijk:26-arxiv]  
+Orbital stability of plane waves in the Klein-Gordon equation against localized perturbations, _J. Math. Phys._ **67**,(10): 101502
 1. L. Garénaux and B. Hilder (2026) - [DOI][garenaux-hilder:26-doi] - [arXiv][garenaux-Hilder:26-arxiv]  
 Linear convective stability of a front superposition with unstable connecting state, _Nonlinear Differential Equations Appl. NoDEA_ **33**, 4
 1. L. Garénaux and B. de Rijk (2026) - [DOI][garenaux-deRijk:26-doi] - [arXiv][garenaux-deRijk:26-arxiv]  

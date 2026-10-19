@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-last_update: May 2026
+last_update: October 2026
 
 title: Louis Garénaux
 
